@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Modal from '@/components/Modal.vue'
 
 Vue.use(VueRouter)
 
@@ -11,12 +12,11 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/modal/',
+    name: 'modal',
+    props: true,
+    //ver se é de fato um link, pois é chamado igual component
+    component: Modal
   }
 ]
 
